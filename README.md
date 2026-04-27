@@ -1,61 +1,63 @@
+**Deutsch** · [English](README.en.md)
+
 # becoss Coding Framework
 
-> Build production-ready web apps faster with AI-powered Skills handling Requirements, Architecture, Development, QA, SEO/GEO, and Deployment.
+> Produktionsreife Web-Apps schneller bauen — mit KI-gestützten Skills für Anforderungen, Architektur, Entwicklung, QA, SEO/GEO und Deployment.
 
-This template uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with modern Skills, Rules, and Sub-Agents to provide a complete AI-powered development workflow.
+Dieses Template nutzt [Claude Code](https://docs.anthropic.com/en/docs/claude-code) mit modernen Skills, Rules und Sub-Agents für einen kompletten KI-gestützten Entwicklungs-Workflow.
 
-> **Building a new app from this framework?** This repo is a **GitHub Template Repository**. Click the green **"Use this template"** button at the top of the repo page → **Create a new repository** to spin up your own independent project (fresh git history, your own account/org). Then continue with **Prerequisites & Setup** below — but in step 4, clone *your new repo*, not this one.
+> **Du willst eine neue App auf Basis dieses Frameworks bauen?** Dieses Repo ist ein **GitHub Template Repository**. Klick oben auf der Repo-Seite den grünen Button **„Use this template"** → **Create a new repository**, um ein eigenes, unabhängiges Projekt anzulegen (frische Git-History, dein eigener Account/deine Org). Folge dann der **Voraussetzungen & Setup**-Sektion unten — aber klone in Schritt 4 *dein neues Repo*, nicht dieses hier.
 
-## Prerequisites & Setup
+## Voraussetzungen & Setup
 
-This section lists **everything** you need to install and which accounts to create — split into "required to run the framework", "required for the AI workflow", and "optional per use case".
+Diese Sektion listet **alles** auf, was du installieren und welche Accounts du anlegen musst — gegliedert in „erforderlich, um das Framework laufen zu lassen", „erforderlich für den KI-Workflow" und „optional je nach Use Case".
 
-### 1. System Requirements
+### 1. Systemanforderungen
 
-Install on your machine before anything else:
+Vor allem anderen lokal installieren:
 
-| Tool | Version | Install via | Verify |
-|------|---------|-------------|--------|
-| **Node.js** | 20.x or 22.x (LTS) | [nodejs.org](https://nodejs.org) or [`nvm`](https://github.com/nvm-sh/nvm) | `node --version` |
-| **npm** | 10+ (ships with Node) | included with Node | `npm --version` |
+| Tool | Version | Installation über | Verifizieren |
+|------|---------|-------------------|--------------|
+| **Node.js** | 20.x oder 22.x (LTS) | [nodejs.org](https://nodejs.org) oder [`nvm`](https://github.com/nvm-sh/nvm) | `node --version` |
+| **npm** | 10+ (kommt mit Node) | mit Node enthalten | `npm --version` |
 | **Git** | 2.x | [git-scm.com](https://git-scm.com) | `git --version` |
-| **Code editor** | latest | [VS Code](https://code.visualstudio.com) recommended | — |
+| **Code-Editor** | aktuelle Version | [VS Code](https://code.visualstudio.com) empfohlen | — |
 
-> **Why VS Code?** The Claude Code extension integrates directly into the editor (file diffs, inline tool runs, IDE selection context). The framework also works with Claude Code's standalone desktop app or CLI.
+> **Warum VS Code?** Die Claude-Code-Extension integriert sich direkt in den Editor (Datei-Diffs, Inline-Tool-Ausführung, IDE-Selection-Context). Das Framework funktioniert auch mit der Standalone-Desktop-App oder der CLI.
 
-### 2. Claude Code (the AI driver)
+### 2. Claude Code (der KI-Treiber)
 
-Without Claude Code, the `/requirements`, `/architecture`, `/frontend`, `/backend`, `/qa`, `/deploy` workflows do not exist. Pick **one** install method:
+Ohne Claude Code existieren die Workflows `/requirements`, `/architecture`, `/frontend`, `/backend`, `/qa`, `/deploy` nicht. Wähle **eine** Installationsart:
 
-| Variant | When to use | Install |
-|---------|------------|---------|
-| **VS Code extension** | recommended for this framework | search "Claude Code" in the VS Code Marketplace and install |
-| **Desktop app** (macOS / Windows) | standalone GUI | download from [claude.ai/download](https://claude.ai/download) |
-| **CLI** | terminal-only / CI | `npm install -g @anthropic-ai/claude-code`, then run `claude` |
+| Variante | Wann verwenden | Installation |
+|----------|----------------|--------------|
+| **VS Code Extension** | empfohlen für dieses Framework | im VS Code Marketplace nach „Claude Code" suchen und installieren |
+| **Desktop App** (macOS / Windows) | Standalone-GUI | von [claude.ai/download](https://claude.ai/download) laden |
+| **CLI** | nur Terminal / CI | `npm install -g @anthropic-ai/claude-code`, dann `claude` ausführen |
 
-Full install docs: [docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code).
+Vollständige Install-Doku: [docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code).
 
-### 3. Anthropic Account (auth for Claude Code)
+### 3. Anthropic-Account (Auth für Claude Code)
 
-Claude Code authenticates against your Anthropic account on first launch. Two options:
+Claude Code authentifiziert sich beim ersten Start gegen deinen Anthropic-Account. Zwei Optionen:
 
-- **Claude Pro / Max subscription** ([claude.ai](https://claude.ai)) — log in via the OAuth flow Claude Code shows on first run. Recommended for individuals.
-- **Anthropic API key** ([console.anthropic.com](https://console.anthropic.com)) — pay-as-you-go credits. Required for team/CI usage.
+- **Claude Pro / Max Subscription** ([claude.ai](https://claude.ai)) — Login über den OAuth-Flow, den Claude Code beim ersten Start zeigt. Für Einzelpersonen empfohlen.
+- **Anthropic API-Key** ([console.anthropic.com](https://console.anthropic.com)) — Pay-as-you-go-Credits. Erforderlich für Team-/CI-Nutzung.
 
-You only need one. Both give access to the full skill workflow.
+Eines reicht. Beide geben dir Zugriff auf den vollen Skill-Workflow.
 
-### 4. Clone & Install
+### 4. Klonen & Installieren
 
-**If you used "Use this template"** (recommended for new apps): clone *your new repo* — replace the URL accordingly:
+**Wenn du „Use this template" verwendet hast** (empfohlen für neue Apps): klone *dein neues Repo* — die URL entsprechend ersetzen:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_NEW_REPO.git my-project
 cd my-project
 npm install
-npx playwright install chromium   # one-time, ~300 MB, needed for E2E tests
+npx playwright install chromium   # einmalig, ~300 MB, für E2E-Tests benötigt
 ```
 
-**If you want to inspect or contribute to the framework itself:**
+**Wenn du das Framework selbst inspizieren oder daran mitarbeiten willst:**
 
 ```bash
 git clone https://github.com/larsbertram1976/becoss-coding-framework.git
@@ -64,124 +66,124 @@ npm install
 npx playwright install chromium
 ```
 
-### 5. Optional Service Accounts
+### 5. Optionale Service-Accounts
 
-You only need these when a feature actually requires the service. Don't sign up for any of them upfront — wait until the workflow asks.
+Diese brauchst du nur, wenn ein Feature den jeweiligen Service tatsächlich verwendet. Melde dich nicht vorab überall an — warte, bis der Workflow danach fragt.
 
-| Service | When you need it | Free tier | What you copy into `.env.local` |
-|---------|-----------------|-----------|---------------------------------|
-| [Supabase](https://supabase.com) | feature needs database, auth or storage | yes | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
-| [Vercel](https://vercel.com) | deploying the app | yes (Hobby) | — (env vars set in Vercel Dashboard) |
-| [GitHub](https://github.com) | version control + Vercel auto-deploy | yes | — |
-| [Sentry](https://sentry.io) | production error tracking | yes | `SENTRY_DSN`, `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_AUTH_TOKEN` |
-| [Upstash](https://upstash.com) | rate limiting on public APIs | 10k req/day | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
+| Service | Wann nötig | Free Tier | Was in `.env.local` kommt |
+|---------|-----------|-----------|---------------------------|
+| [Supabase](https://supabase.com) | Feature braucht Datenbank, Auth oder Storage | ja | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
+| [Vercel](https://vercel.com) | App deployen | ja (Hobby) | — (Env-Vars im Vercel Dashboard) |
+| [GitHub](https://github.com) | Versionskontrolle + Vercel-Auto-Deploy | ja | — |
+| [Sentry](https://sentry.io) | Production-Fehler-Tracking | ja | `SENTRY_DSN`, `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_AUTH_TOKEN` |
+| [Upstash](https://upstash.com) | Rate Limiting auf öffentlichen APIs | 10k Req/Tag | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
 
-Setup instructions for the production services live in [docs/production/](docs/production/) and are walked through automatically by the `/deploy` skill on first deployment.
+Setup-Anleitungen für die Production-Services liegen in [docs/production/](docs/production/) und werden vom `/deploy`-Skill beim ersten Deployment automatisch durchgegangen.
 
-### 6. Supabase Setup (only if you need a backend)
+### 6. Supabase einrichten (nur wenn du ein Backend brauchst)
 
-1. Create a project at [supabase.com](https://supabase.com)
-2. Copy the project URL + anon key from **Project Settings → API**
-3. `cp .env.local.example .env.local`, paste both values
-4. Uncomment the client in [src/lib/supabase.ts](src/lib/supabase.ts) (currently commented out behind a placeholder export)
+1. Projekt auf [supabase.com](https://supabase.com) anlegen
+2. Projekt-URL + Anon-Key aus **Project Settings → API** kopieren
+3. `cp .env.local.example .env.local`, beide Werte einfügen
+4. Den Client in [src/lib/supabase.ts](src/lib/supabase.ts) auskommentieren (steht aktuell hinter einem Platzhalter-Export)
 
-Skip entirely for frontend-only projects (landing pages, portfolios, brochure sites).
+Komplett überspringbar bei reinen Frontend-Projekten (Landingpages, Portfolios, Broschüren-Seiten).
 
-### 7. Environment Variables — single source of truth
+### 7. Environment Variables — eine Quelle der Wahrheit
 
-The starter file [.env.local.example](.env.local.example) lists what's needed. Full reference (`.env.local` is gitignored — never commit secrets):
+Die Vorlage [.env.local.example](.env.local.example) listet, was nötig ist. Vollständige Referenz (`.env.local` ist gitignored — niemals Secrets committen):
 
 ```bash
-# --- Supabase (only if backend is used) ---
+# --- Supabase (nur wenn Backend genutzt wird) ---
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
-# --- Sentry (production error tracking) ---
+# --- Sentry (Production-Fehler-Tracking) ---
 SENTRY_DSN=
 NEXT_PUBLIC_SENTRY_DSN=
 SENTRY_AUTH_TOKEN=
 
-# --- Upstash (production rate limiting, optional) ---
+# --- Upstash (Production Rate Limiting, optional) ---
 UPSTASH_REDIS_REST_URL=
 UPSTASH_REDIS_REST_TOKEN=
 ```
 
-For production, mirror every variable into **Vercel Dashboard → Project → Settings → Environment Variables**.
+Für Production jede Variable zusätzlich im **Vercel Dashboard → Project → Settings → Environment Variables** anlegen.
 
-### 8. Setup Sequence (TL;DR)
+### 8. Setup-Reihenfolge (TL;DR)
 
-A linear walk-through — copy-paste-able for a fresh machine:
+Linearer Walk-through — copy-paste-fähig für eine frische Maschine:
 
 ```bash
-# 1. System tools (one-time, machine-wide)
-#    Install Node 20+, Git, VS Code via the links in step 1 above
+# 1. System-Tools (einmalig, maschinenweit)
+#    Node 20+, Git, VS Code via die Links in Schritt 1 oben installieren
 
-# 2. Claude Code (one-time, machine-wide)
-#    Install via VS Code Marketplace, desktop app, or:
+# 2. Claude Code (einmalig, maschinenweit)
+#    Installation via VS Code Marketplace, Desktop App oder:
 npm install -g @anthropic-ai/claude-code
-claude   # follow auth flow on first run
+claude   # beim ersten Start dem Auth-Flow folgen
 
-# 3. Project (per project)
-#    First create your repo via "Use this template" on GitHub, then:
+# 3. Projekt (pro Projekt)
+#    Erst eigenes Repo via "Use this template" auf GitHub anlegen, dann:
 git clone https://github.com/YOUR_USERNAME/YOUR_NEW_REPO.git my-project
 cd my-project
 npm install
 npx playwright install chromium
 
 # 4. (Optional) Backend
-cp .env.local.example .env.local        # then fill in Supabase keys
+cp .env.local.example .env.local        # dann Supabase-Keys eintragen
 
-# 5. Run
+# 5. Starten
 npm run dev                              # http://localhost:3000
 ```
 
-Now jump to **First Run** below to initialize your project with the AI workflow.
+Springe jetzt zu **Erste Inbetriebnahme** unten, um dein Projekt mit dem KI-Workflow zu initialisieren.
 
 ---
 
-## First Run
+## Erste Inbetriebnahme
 
-Once setup is done, this is how you actually use the framework.
+Nachdem das Setup erledigt ist, so nutzt du das Framework tatsächlich.
 
-### Initialize Your Project
+### Projekt initialisieren
 
-Open Claude Code in this repo and describe what you want to build. The `/requirements` skill auto-detects a fresh project and enters **Init Mode**:
-
-```
-/requirements I want to build a project management tool for small teams
-where users can create projects, assign tasks, and track progress.
-```
-
-The skill will:
-1. Ask interactive questions about vision, target users, and MVP scope
-2. Create your **Product Requirements Document** ([docs/PRD.md](docs/PRD.md))
-3. Break the project into individual features (Single Responsibility)
-4. Create all **feature specs** (`features/PROJ-1.md`, `PROJ-2.md`, …)
-5. Update **feature tracking** ([features/INDEX.md](features/INDEX.md))
-6. Recommend which feature to build first
-
-A brief description is enough — the skill asks follow-ups interactively.
-
-### Build Features
-
-Build features one at a time using the skill chain:
+Öffne Claude Code in diesem Repo und beschreibe, was du bauen willst. Der `/requirements`-Skill erkennt automatisch ein frisches Projekt und wechselt in den **Init-Modus**:
 
 ```
-/architecture    Design the tech approach for features/PROJ-1-user-auth.md
-/frontend        Build the UI
-/backend         Build the API (if needed)
-/qa              Test against acceptance criteria + security audit
-/seo             Optimize for search engines (SEO) and AI/LLM crawlers (GEO)
-/deploy          Deploy to Vercel
+/requirements Ich möchte ein Projektmanagement-Tool für kleine Teams bauen,
+mit dem Nutzer Projekte anlegen, Aufgaben zuweisen und den Fortschritt verfolgen können.
 ```
 
-Each skill suggests the next step when it finishes. Handoffs are always user-initiated.
+Der Skill wird:
+1. Interaktiv Fragen zu Vision, Zielgruppe und MVP-Scope stellen
+2. Dein **Product Requirements Document** erstellen ([docs/PRD.md](docs/PRD.md))
+3. Das Projekt in einzelne Features aufteilen (Single Responsibility)
+4. Alle **Feature-Specs** anlegen (`features/PROJ-1.md`, `PROJ-2.md`, …)
+5. Das **Feature-Tracking** aktualisieren ([features/INDEX.md](features/INDEX.md))
+6. Empfehlen, welches Feature zuerst gebaut werden sollte
 
-To add features later, run `/requirements` again — it detects the existing PRD and adds a single feature.
+Eine kurze Beschreibung reicht — der Skill stellt interaktiv Folgefragen.
 
-### Adding more shadcn/ui components
+### Features bauen
 
-35+ components are pre-installed under [src/components/ui/](src/components/ui/). Add more as needed:
+Features eins nach dem anderen über die Skill-Kette bauen:
+
+```
+/architecture    Tech-Ansatz für features/PROJ-1-user-auth.md entwerfen
+/frontend        UI bauen
+/backend         API bauen (falls nötig)
+/qa              Gegen Acceptance Criteria + Security-Audit testen
+/seo             Für Suchmaschinen (SEO) und KI-/LLM-Crawler (GEO) optimieren
+/deploy          Auf Vercel deployen
+```
+
+Jeder Skill schlägt am Ende den nächsten Schritt vor. Übergaben werden immer vom Nutzer initiiert.
+
+Um später weitere Features zu ergänzen, einfach `/requirements` erneut ausführen — er erkennt das bestehende PRD und fügt ein einzelnes Feature hinzu.
+
+### Weitere shadcn/ui-Komponenten hinzufügen
+
+Über 35 Komponenten sind unter [src/components/ui/](src/components/ui/) vorinstalliert. Bei Bedarf weitere ergänzen:
 
 ```bash
 npx shadcn@latest add [component-name]
@@ -189,313 +191,313 @@ npx shadcn@latest add [component-name]
 
 ---
 
-## Available Skills
+## Verfügbare Skills
 
-| Skill | Command | What It Does |
-|-------|---------|-------------|
-| Requirements Engineer | `/requirements` | Creates feature specs with user stories, acceptance criteria, edge cases |
-| Solution Architect | `/architecture` | Designs PM-friendly tech architecture (no code, only high-level design) |
-| Frontend Developer | `/frontend` | Builds UI with React, Tailwind CSS, and shadcn/ui |
-| Backend Developer | `/backend` | Builds APIs, database schemas, RLS policies with Supabase |
-| QA Engineer | `/qa` | Tests features against acceptance criteria + security audit |
-| SEO Engineer | `/seo` | Optimizes for search engines (SEO) and AI/LLM crawlers (GEO) — metadata, JSON-LD, sitemap, robots.txt, llms.txt |
-| DevOps | `/deploy` | Deploys to Vercel with production-ready checks |
-| Help | `/help` | Context-aware guide: shows where you are and what to do next |
+| Skill | Befehl | Was er macht |
+|-------|--------|--------------|
+| Requirements Engineer | `/requirements` | Erstellt Feature-Specs mit User Stories, Acceptance Criteria, Edge Cases |
+| Solution Architect | `/architecture` | Entwirft PM-freundliche Tech-Architektur (kein Code, nur High-Level-Design) |
+| Frontend Developer | `/frontend` | Baut UI mit React, Tailwind CSS und shadcn/ui |
+| Backend Developer | `/backend` | Baut APIs, Datenbank-Schemata, RLS-Policies mit Supabase |
+| QA Engineer | `/qa` | Testet Features gegen Acceptance Criteria + Security-Audit |
+| SEO Engineer | `/seo` | Optimiert für Suchmaschinen (SEO) und KI-/LLM-Crawler (GEO) — Metadaten, JSON-LD, Sitemap, robots.txt, llms.txt |
+| DevOps | `/deploy` | Deployt auf Vercel mit Production-Ready-Checks |
+| Help | `/help` | Kontextabhängiger Guide: zeigt, wo du gerade stehst und was als Nächstes kommt |
 
-### How Skills Work
+### Wie Skills funktionieren
 
-- **Skills** are defined in `.claude/skills/` and auto-discovered by Claude Code
-- **Rules** in `.claude/rules/` are auto-applied based on file context (no manual loading)
-- **Sub-Agents** run heavy tasks (frontend, backend, QA, SEO) in isolated contexts for cost efficiency
-- **CLAUDE.md** provides project context automatically at every session start
+- **Skills** liegen in `.claude/skills/` und werden von Claude Code automatisch erkannt
+- **Rules** in `.claude/rules/` werden automatisch je nach Datei-Kontext angewendet (kein manuelles Laden)
+- **Sub-Agents** führen schwere Aufgaben (Frontend, Backend, QA, SEO) in isolierten Contexts aus, um Kosten zu sparen
+- **CLAUDE.md** liefert Projektkontext automatisch bei jedem Session-Start
 
 ---
 
-## Development Workflow
+## Entwicklungs-Workflow
 
 ```
-1. Define    /requirements  -->  Feature spec in features/PROJ-X.md
-2. Design    /architecture  -->  Tech design added to feature spec
-3. Build     /frontend      -->  UI components implemented
-             /backend       -->  APIs + database (if needed)
-4. Test      /qa            -->  Test results added to feature spec
-5. Optimize  /seo           -->  SEO + GEO section added (skip for internal-only features)
-6. Ship      /deploy        -->  Deployed to Vercel
+1. Definieren  /requirements  -->  Feature-Spec in features/PROJ-X.md
+2. Designen    /architecture  -->  Tech-Design ergänzt im Feature-Spec
+3. Bauen       /frontend      -->  UI-Komponenten implementiert
+               /backend       -->  APIs + Datenbank (falls nötig)
+4. Testen      /qa            -->  Test-Ergebnisse im Feature-Spec
+5. Optimieren  /seo           -->  SEO + GEO Sektion (überspringbar bei rein internen Features)
+6. Ausliefern  /deploy        -->  Deployed auf Vercel
 ```
 
-### Feature Tracking
+### Feature-Tracking
 
-Features are tracked in `features/INDEX.md`:
+Features werden in `features/INDEX.md` getrackt:
 
 | ID | Feature | Status | Spec |
 |----|---------|--------|------|
 | PROJ-1 | User Login | Deployed | [Spec](features/PROJ-1-user-login.md) |
 | PROJ-2 | Dashboard | In Progress | [Spec](features/PROJ-2-dashboard.md) |
 
-Every skill reads this file at start and updates it when done, preventing duplicate work.
+Jeder Skill liest diese Datei zu Beginn und aktualisiert sie nach getaner Arbeit — verhindert doppelte Arbeit.
 
 ---
 
-## Tech Stack
+## Tech-Stack
 
-| Category | Tool | Why? |
-|----------|------|------|
+| Kategorie | Tool | Warum? |
+|-----------|------|--------|
 | **Framework** | Next.js 16 | React + Server Components + App Router |
-| **Language** | TypeScript | Type safety |
+| **Sprache** | TypeScript | Typsicherheit |
 | **Styling** | Tailwind CSS | Utility-first CSS |
-| **UI Library** | shadcn/ui | Copy-paste, customizable components |
+| **UI-Library** | shadcn/ui | Copy-paste, anpassbare Komponenten |
 | **Backend** | Supabase (optional) | PostgreSQL + Auth + Storage + Realtime |
-| **Deployment** | Vercel | Zero-config Next.js hosting |
-| **Validation** | Zod | Runtime type validation |
+| **Deployment** | Vercel | Zero-Config Next.js Hosting |
+| **Validation** | Zod | Runtime-Typvalidierung |
 
 ---
 
-## Project Structure
+## Projektstruktur
 
 ```
 becoss-coding-framework/
-+-- CLAUDE.md                        <-- Auto-loaded project context
++-- CLAUDE.md                        <-- Auto-geladener Projekt-Context
 +-- .claude/
-|   +-- settings.json                <-- Team permissions (committed)
-|   +-- settings.local.json          <-- Personal overrides (gitignored)
-|   +-- rules/                       <-- Auto-applied coding rules
-|   |   +-- general.md                   Git workflow, feature tracking
-|   |   +-- frontend.md                  shadcn/ui, component standards
-|   |   +-- backend.md                   RLS, validation, queries
-|   |   +-- security.md                  Secrets, headers, auth
-|   +-- skills/                      <-- Invocable workflows (/command)
+|   +-- settings.json                <-- Team-Permissions (committed)
+|   +-- settings.local.json          <-- Persönliche Overrides (gitignored)
+|   +-- rules/                       <-- Auto-angewandte Coding-Rules
+|   |   +-- general.md                   Git-Workflow, Feature-Tracking
+|   |   +-- frontend.md                  shadcn/ui, Komponenten-Standards
+|   |   +-- backend.md                   RLS, Validation, Queries
+|   |   +-- security.md                  Secrets, Headers, Auth
+|   +-- skills/                      <-- Aufrufbare Workflows (/command)
 |   |   +-- requirements/SKILL.md        /requirements
 |   |   +-- architecture/SKILL.md        /architecture
-|   |   +-- frontend/SKILL.md            /frontend (runs as sub-agent)
-|   |   +-- backend/SKILL.md             /backend (runs as sub-agent)
-|   |   +-- qa/SKILL.md                  /qa (runs as sub-agent)
-|   |   +-- seo/SKILL.md                 /seo (runs as sub-agent)
+|   |   +-- frontend/SKILL.md            /frontend (läuft als Sub-Agent)
+|   |   +-- backend/SKILL.md             /backend (läuft als Sub-Agent)
+|   |   +-- qa/SKILL.md                  /qa (läuft als Sub-Agent)
+|   |   +-- seo/SKILL.md                 /seo (läuft als Sub-Agent)
 |   |   +-- deploy/SKILL.md              /deploy
 |   |   +-- help/SKILL.md                /help
-|   +-- agents/                      <-- Sub-agent configs
-|       +-- frontend-dev.md              Model, tools, limits
+|   +-- agents/                      <-- Sub-Agent-Configs
+|       +-- frontend-dev.md              Modell, Tools, Limits
 |       +-- backend-dev.md
 |       +-- qa-engineer.md
 |       +-- seo-engineer.md
-+-- features/                        <-- Feature specifications
-|   +-- INDEX.md                         Status tracking
-|   +-- README.md                        Spec format documentation
++-- features/                        <-- Feature-Specifications
+|   +-- INDEX.md                         Status-Tracking
+|   +-- README.md                        Spec-Format-Doku
 +-- docs/
 |   +-- PRD.md                       <-- Product Requirements Document
-|   +-- production/                  <-- Production setup guides
-|       +-- error-tracking.md            Sentry setup (5 min)
-|       +-- security-headers.md          XSS/Clickjacking protection
-|       +-- performance.md               Lighthouse, optimization
-|       +-- database-optimization.md     Indexing, N+1, caching
+|   +-- production/                  <-- Production-Setup-Guides
+|       +-- error-tracking.md            Sentry-Setup (5 Min)
+|       +-- security-headers.md          XSS-/Clickjacking-Schutz
+|       +-- performance.md               Lighthouse, Optimierung
+|       +-- database-optimization.md     Indexing, N+1, Caching
 |       +-- rate-limiting.md             Upstash Redis
 +-- src/
 |   +-- app/                         <-- Pages (Next.js App Router)
 |   +-- components/
-|   |   +-- ui/                      <-- shadcn/ui components (35+ installed)
-|   +-- hooks/                       <-- Custom React hooks
+|   |   +-- ui/                      <-- shadcn/ui-Komponenten (35+ installiert)
+|   +-- hooks/                       <-- Custom React Hooks
 |   +-- lib/                         <-- Utilities
-+-- public/                          <-- Static files
++-- public/                          <-- Statische Dateien
 ```
 
 ---
 
-## Testing Strategy
+## Test-Strategie
 
-This template uses a **two-layer testing strategy**: Vitest for isolated logic, Playwright for user-visible behavior. Both are wired up; tests are generated per feature by the `/qa` skill — no boilerplate to copy.
+Dieses Template nutzt eine **zweischichtige Test-Strategie**: Vitest für isolierte Logik, Playwright für sichtbares Nutzerverhalten. Beide sind verdrahtet; Tests werden pro Feature vom `/qa`-Skill generiert — kein Boilerplate zum Kopieren.
 
-### Layer 1: Vitest (unit / integration)
+### Schicht 1: Vitest (Unit / Integration)
 
-Fast, runs in `jsdom`. Co-locate test files next to the source they test (e.g. `src/hooks/useFeature.test.ts` beside `src/hooks/useFeature.ts`).
+Schnell, läuft in `jsdom`. Test-Dateien direkt neben der Quelldatei ablegen (z. B. `src/hooks/useFeature.test.ts` neben `src/hooks/useFeature.ts`).
 
-**Use Vitest when** the logic can be tested without a browser:
-- Custom hooks with non-trivial logic (storage access, reducers, debounced state)
-- Pure utility / transformation functions (sort, filter, reorder, parse)
-- Form validation logic extracted from components
-- API route handlers (request → response, mocked deps)
+**Vitest verwenden, wenn** sich die Logik ohne Browser testen lässt:
+- Custom Hooks mit nicht-trivialer Logik (Storage-Zugriff, Reducer, Debounced State)
+- Pure Utility-/Transformations-Funktionen (sort, filter, reorder, parse)
+- Aus Komponenten extrahierte Form-Validation-Logik
+- API-Route-Handler (Request → Response, gemockte Deps)
 
-**Skip Vitest for** purely presentational components or anything already covered end-to-end.
+**Vitest überspringen für** rein präsentationelle Komponenten oder alles, was bereits End-to-End abgedeckt ist.
 
-Run: `npm test` (one-shot) or `npm run test:watch` (TDD).
+Ausführen: `npm test` (einmalig) oder `npm run test:watch` (TDD).
 
-### Layer 2: Playwright (E2E)
+### Schicht 2: Playwright (E2E)
 
-Real Chromium + Mobile Safari, hits a live `next dev` server. Tests live in [tests/](tests/) and are named per feature: `tests/PROJ-X-feature-name.spec.ts`.
+Echtes Chromium + Mobile Safari, gegen einen laufenden `next dev`-Server. Tests liegen in [tests/](tests/) und sind pro Feature benannt: `tests/PROJ-X-feature-name.spec.ts`.
 
-**Use Playwright when** the behavior is only meaningful through the UI:
-- One `test()` per acceptance criterion (the test reads like the user story)
-- Multi-page flows, navigation, auth, redirects
-- Form submission round-trips, optimistic UI, server responses
-- Responsive / cross-browser regressions
+**Playwright verwenden, wenn** das Verhalten nur durch die UI sinnvoll prüfbar ist:
+- Ein `test()` pro Acceptance Criterion (der Test liest sich wie die User Story)
+- Multi-Page-Flows, Navigation, Auth, Redirects
+- Form-Submission-Roundtrips, Optimistic UI, Server-Antworten
+- Responsive- / Cross-Browser-Regressionen
 
-These specs become the permanent regression suite — never delete passing E2E tests when a feature changes; update them.
+Diese Specs werden zur permanenten Regressions-Suite — beim Ändern eines Features niemals bestehende grüne E2E-Tests löschen, sondern aktualisieren.
 
-Run: `npm run test:e2e` (headless), `npm run test:e2e:ui` (debugger), `npm run test:all` (both layers).
+Ausführen: `npm run test:e2e` (headless), `npm run test:e2e:ui` (Debugger), `npm run test:all` (beide Schichten).
 
-### When to write what — quick rule
+### Wann was schreiben — schnelle Regel
 
-> If a senior dev could tell whether the code is correct **by reading it**, write a Vitest test.
-> If they'd have to **click through the app** to be sure, write a Playwright test.
+> Wenn ein Senior-Dev **durch Lesen** des Codes erkennen könnte, ob er korrekt ist → Vitest-Test.
+> Wenn er **durch die App klicken** müsste, um sicher zu sein → Playwright-Test.
 
-### How tests get written
+### Wie Tests entstehen
 
-You don't write tests by hand. The `/qa` skill ([.claude/skills/qa/SKILL.md](.claude/skills/qa/SKILL.md)) reads a feature spec, runs through acceptance criteria + edge cases + security audit, then generates the unit and E2E tests it would have used to verify them. Run `/qa features/PROJ-X-name.md` after implementation.
+Du schreibst keine Tests von Hand. Der `/qa`-Skill ([.claude/skills/qa/SKILL.md](.claude/skills/qa/SKILL.md)) liest den Feature-Spec, geht Acceptance Criteria + Edge Cases + Security-Audit durch und generiert die Unit- und E2E-Tests, die er zur Verifikation genutzt hätte. `/qa features/PROJ-X-name.md` nach der Implementierung ausführen.
 
-### One-time setup
+### Einmaliges Setup
 
-Playwright needs browser binaries (~300 MB) once per machine:
+Playwright benötigt einmal pro Maschine die Browser-Binaries (~300 MB):
 ```bash
 npx playwright install chromium
 ```
 
 ---
 
-## SEO & GEO Strategy
+## SEO- & GEO-Strategie
 
-After QA passes, the `/seo` skill optimizes the feature for both classic search engines and AI/LLM crawlers (ChatGPT, Perplexity, Claude, Google AI Overviews). Two layers, like testing — one stable, one experimental.
+Nach bestandenem QA optimiert der `/seo`-Skill das Feature für klassische Suchmaschinen und KI-/LLM-Crawler (ChatGPT, Perplexity, Claude, Google AI Overviews). Zwei Schichten, wie beim Testen — eine stabil, eine experimentell.
 
-### Layer 1: SEO (stable, mandatory)
+### Schicht 1: SEO (stabil, Pflicht)
 
-For every public-facing page in a feature, `/seo` adds:
+Für jede öffentlich zugängliche Page eines Features ergänzt `/seo`:
 
-- **Page metadata** via Next.js `generateMetadata()` — `title`, `description`, OG/Twitter cards, canonical URL
-- **Structured data** (JSON-LD) — picks the right schema per content type (`Article`, `Product`, `FAQPage`, `BreadcrumbList`, `Organization`, `Person`, `Event`, `HowTo`)
-- **OG images** — static or dynamically generated via `opengraph-image.tsx` + `next/og`
-- **Sitemap entry** — added to `src/app/sitemap.ts`
-- **Lighthouse SEO audit** — target ≥ 95 per page (actual score, run via `npx lighthouse`)
+- **Page-Metadaten** über Next.js `generateMetadata()` — `title`, `description`, OG-/Twitter-Cards, Canonical URL
+- **Strukturierte Daten** (JSON-LD) — passendes Schema je Content-Typ (`Article`, `Product`, `FAQPage`, `BreadcrumbList`, `Organization`, `Person`, `Event`, `HowTo`)
+- **OG-Bilder** — statisch oder dynamisch generiert via `opengraph-image.tsx` + `next/og`
+- **Sitemap-Eintrag** — ergänzt in `src/app/sitemap.ts`
+- **Lighthouse-SEO-Audit** — Ziel ≥ 95 pro Page (echter Score, gemessen via `npx lighthouse`)
 
-Site-level baseline (`metadataBase`, `sitemap.ts`, `robots.ts`, `manifest.ts`) is set up automatically on first run.
+Die Site-Baseline (`metadataBase`, `sitemap.ts`, `robots.ts`, `manifest.ts`) wird beim ersten Lauf automatisch eingerichtet.
 
-### Layer 2: GEO (experimental, best-effort)
+### Schicht 2: GEO (experimentell, Best Effort)
 
-Generative Engine Optimization makes content discoverable and citation-friendly to AI crawlers. Standards are still evolving (`llms.txt` was proposed in 2024 by Anthropic), so `/seo` flags GEO items explicitly as experimental in the feature spec:
+Generative Engine Optimization macht Content für KI-Crawler auffindbar und zitierfähig. Standards entwickeln sich noch (`llms.txt` wurde 2024 von Anthropic vorgeschlagen), daher kennzeichnet `/seo` GEO-Punkte explizit als experimentell im Feature-Spec:
 
-- **`public/llms.txt`** — markdown summary of the site for LLM crawlers, with key URLs and content categories
-- **`public/llms-full.txt`** (optional) — full content snapshots for citation
-- **Citation-friendly structure** — clear `<h1>`/`<h2>`/`<h3>` hierarchy, semantic `<article>`/`<section>`, FAQ Q&A blocks paired with `FAQPage` schema
-- **E-E-A-T signals** — Experience, Expertise, Authority, Trust via `Organization` + `Person` schema, `sameAs` links to social profiles, author bylines with `datePublished`/`dateModified`
-- **No LLM-blocking patterns** — important content in initial HTML (Server Components), no canvas/image-only text, no login walls in front of indexable content
+- **`public/llms.txt`** — Markdown-Zusammenfassung der Site für LLM-Crawler, mit Schlüssel-URLs und Content-Kategorien
+- **`public/llms-full.txt`** (optional) — vollständige Content-Snapshots zur Zitation
+- **Zitierfähige Struktur** — klare `<h1>`/`<h2>`/`<h3>`-Hierarchie, semantisches `<article>`/`<section>`, FAQ-Q&A-Blöcke gepaart mit `FAQPage`-Schema
+- **E-E-A-T-Signale** — Experience, Expertise, Authority, Trust via `Organization`- + `Person`-Schema, `sameAs`-Links auf Social-Profile, Author-Bylines mit `datePublished`/`dateModified`
+- **Keine LLM-blockierenden Patterns** — wichtige Inhalte im initialen HTML (Server Components), kein Canvas- oder rein bildbasierter Text, keine Login-Walls vor indexierbaren Inhalten
 
-### When to skip `/seo`
+### Wann `/seo` übersprungen werden kann
 
-Only for features without public-facing pages — internal admin tools, dashboards behind auth that should not be indexed. The skill asks before touching anything.
+Nur bei Features ohne öffentliche Pages — interne Admin-Tools, Dashboards hinter Auth, die nicht indexiert werden sollen. Die Skill fragt nach, bevor sie etwas anfasst.
 
-### How SEO/GEO gets written
+### Wie SEO/GEO entsteht
 
-You don't write metadata by hand. The `/seo` skill ([.claude/skills/seo/SKILL.md](.claude/skills/seo/SKILL.md)) reads the feature spec, runs the site baseline if missing, then generates per-page metadata, JSON-LD, OG images and sitemap entries. It runs Lighthouse audits and validates JSON-LD against [Google Rich Results Test](https://search.google.com/test/rich-results) before reporting back. Run `/seo features/PROJ-X-name.md` after `/qa` passes.
+Du schreibst keine Metadaten von Hand. Der `/seo`-Skill ([.claude/skills/seo/SKILL.md](.claude/skills/seo/SKILL.md)) liest den Feature-Spec, richtet die Site-Baseline ein, falls fehlend, und generiert dann pro Page Metadaten, JSON-LD, OG-Bilder und Sitemap-Einträge. Er führt Lighthouse-Audits aus und validiert JSON-LD gegen den [Google Rich Results Test](https://search.google.com/test/rich-results), bevor er reportet. `/seo features/PROJ-X-name.md` nach bestandenem `/qa` ausführen.
 
 ---
 
-## How It Works Under the Hood
+## Wie es unter der Haube funktioniert
 
 ### Skills (`.claude/skills/`)
-Each skill is a structured workflow that Claude Code discovers automatically. Skills can run inline (in the main conversation) or as forked sub-agents (isolated context window).
+Jeder Skill ist ein strukturierter Workflow, den Claude Code automatisch erkennt. Skills laufen entweder inline (im Hauptgespräch) oder als geforkter Sub-Agent (isoliertes Context-Window).
 
-| Skill | Execution | Why? |
-|-------|-----------|------|
-| `/requirements` | Inline | Needs live interaction with user |
-| `/architecture` | Inline | Short output, user reviews in real-time |
-| `/frontend` | Sub-agent (forked) | Heavy file editing, lots of output |
-| `/backend` | Sub-agent (forked) | Heavy file editing, SQL, API code |
-| `/qa` | Sub-agent (forked) | Systematic testing, lots of output |
-| `/seo` | Sub-agent (forked) | Multi-file metadata edits, audits, schema generation |
-| `/deploy` | Inline | Deployment needs user oversight |
-| `/help` | Inline | Quick status check and guidance |
+| Skill | Ausführung | Warum? |
+|-------|-----------|--------|
+| `/requirements` | Inline | Braucht Live-Interaktion mit Nutzer |
+| `/architecture` | Inline | Kurzer Output, Nutzer reviewt in Echtzeit |
+| `/frontend` | Sub-Agent (forked) | Viele Datei-Edits, viel Output |
+| `/backend` | Sub-Agent (forked) | Viele Datei-Edits, SQL, API-Code |
+| `/qa` | Sub-Agent (forked) | Systematisches Testen, viel Output |
+| `/seo` | Sub-Agent (forked) | Multi-File-Metadaten-Edits, Audits, Schema-Generierung |
+| `/deploy` | Inline | Deployment braucht Nutzer-Aufsicht |
+| `/help` | Inline | Schneller Status-Check und Guidance |
 
 ### Rules (`.claude/rules/`)
-Coding standards that are auto-applied based on which files Claude is working with. No manual loading needed.
+Coding-Standards, die je nach bearbeiteter Datei automatisch greifen. Kein manuelles Laden nötig.
 
-### Sub-Agent Configs (`.claude/agents/`)
-Lightweight configurations that define model, tool access, and turn limits for forked skills.
+### Sub-Agent-Configs (`.claude/agents/`)
+Schlanke Configs, die Modell, Tool-Zugriff und Turn-Limits für geforkte Skills definieren.
 
 ### CLAUDE.md
-Auto-loaded at every session start. Contains tech stack, conventions, and references to PRD and feature index.
+Wird bei jedem Session-Start automatisch geladen. Enthält Tech-Stack, Konventionen und Verweise auf PRD und Feature-Index.
 
 ---
 
 ## Context Engineering
 
-AI agents work best with clean, structured context - not longer prompts. This template is designed around these principles:
+KI-Agents arbeiten am besten mit sauberem, strukturiertem Context — nicht mit längeren Prompts. Dieses Template ist um folgende Prinzipien herum gebaut:
 
-### State lives in files, not in memory
+### State lebt in Dateien, nicht im Speicher
 
-Every skill reads `features/INDEX.md` and the relevant feature spec at start. After context compaction or a new session, nothing is lost - the agent simply re-reads the files. Progress tracking, acceptance criteria, and tech designs all live in markdown files, not in the conversation.
+Jeder Skill liest beim Start `features/INDEX.md` und den relevanten Feature-Spec. Nach Context-Compaction oder einer neuen Session geht nichts verloren — der Agent liest die Dateien einfach neu. Fortschritts-Tracking, Acceptance Criteria und Tech-Designs leben in Markdown-Dateien, nicht im Gespräch.
 
-### Context is layered
+### Context ist geschichtet
 
-Not everything is loaded at once. Information is layered by relevance:
+Nicht alles wird auf einmal geladen. Informationen sind nach Relevanz geschichtet:
 
-| Layer | What | When loaded |
-|-------|------|-------------|
-| `CLAUDE.md` | Tech stack, conventions, commands | Every session (auto) |
-| `.claude/rules/` | Coding standards | When editing matching files (auto) |
-| Skill `SKILL.md` | Workflow instructions | When skill is invoked |
-| Feature spec | Requirements, AC, tech design | On demand (skill reads it) |
-| `docs/production/` | Deployment guides | Only when referenced |
+| Schicht | Was | Wann geladen |
+|---------|-----|--------------|
+| `CLAUDE.md` | Tech-Stack, Konventionen, Befehle | Bei jeder Session (auto) |
+| `.claude/rules/` | Coding-Standards | Beim Bearbeiten passender Dateien (auto) |
+| Skill `SKILL.md` | Workflow-Anweisungen | Beim Aufruf des Skills |
+| Feature-Spec | Anforderungen, AC, Tech-Design | On Demand (Skill liest ihn) |
+| `docs/production/` | Deployment-Guides | Nur bei Verweis |
 
-### Context is isolated
+### Context ist isoliert
 
-Heavy implementation skills (`/frontend`, `/backend`, `/qa`) run as **forked sub-agents** with their own context window. Research noise from one skill doesn't pollute another. Each fork starts clean and loads only what it needs.
+Schwere Implementierungs-Skills (`/frontend`, `/backend`, `/qa`) laufen als **geforkte Sub-Agents** mit eigenem Context-Window. Recherche-Lärm aus einem Skill verschmutzt keinen anderen. Jeder Fork startet sauber und lädt nur, was er braucht.
 
-### Context recovery is built in
+### Context Recovery ist eingebaut
 
-All forked skills include a **Context Recovery** section: if the context is compacted mid-task, the agent re-reads the feature spec, checks `git diff` for progress, and continues without restarting or duplicating work.
+Alle geforkten Skills haben eine **Context-Recovery**-Sektion: Wird der Context mitten in der Aufgabe komprimiert, liest der Agent den Feature-Spec erneut, prüft `git diff` auf Fortschritt und macht ohne Neustart oder Doppelarbeit weiter.
 
-### Always read, never guess
+### Immer lesen, nie raten
 
-A global rule (`rules/general.md`) enforces: always read a file before modifying it, never assume contents from memory, verify import paths and API routes by reading. This prevents hallucinated code references - the most common source of AI coding errors.
-
----
-
-## Customization for Your Team
-
-This template is designed as a starting point. Customize it for your team:
-
-1. **Edit CLAUDE.md** - Add your project-specific conventions and build commands
-2. **Edit docs/PRD.md** - Define your product vision and roadmap
-3. **Edit .claude/rules/** - Adjust coding standards for your team
-4. **Edit .claude/skills/** - Modify workflows to match your process
-5. **Edit .claude/settings.json** - Configure team permissions
+Eine globale Rule (`rules/general.md`) erzwingt: Datei vor jedem Bearbeiten lesen, niemals Inhalte aus dem Gedächtnis annehmen, Import-Pfade und API-Routen durch Lesen verifizieren. Das verhindert halluzinierte Code-Referenzen — die häufigste Quelle für KI-Coding-Fehler.
 
 ---
 
-## Production Guides
+## Anpassung für dein Team
 
-Standalone guides in `docs/production/`:
+Dieses Template ist als Startpunkt gedacht. Für dein Team anpassen:
 
-| Guide | Setup Time | What It Does |
-|-------|-----------|-------------|
-| [Error Tracking](docs/production/error-tracking.md) | 5 min | Sentry integration for automatic error capture |
-| [Security Headers](docs/production/security-headers.md) | 2 min | XSS, Clickjacking, MIME sniffing protection |
-| [Performance](docs/production/performance.md) | 10 min | Lighthouse checks, image optimization, caching |
-| [Database Optimization](docs/production/database-optimization.md) | 15 min | Indexing, N+1 prevention, query optimization |
-| [Rate Limiting](docs/production/rate-limiting.md) | 10 min | Upstash Redis for API abuse prevention |
+1. **CLAUDE.md bearbeiten** — projekt-spezifische Konventionen und Build-Befehle ergänzen
+2. **docs/PRD.md bearbeiten** — Produktvision und Roadmap definieren
+3. **.claude/rules/ bearbeiten** — Coding-Standards für dein Team anpassen
+4. **.claude/skills/ bearbeiten** — Workflows an euren Prozess anpassen
+5. **.claude/settings.json bearbeiten** — Team-Permissions konfigurieren
+
+---
+
+## Production-Guides
+
+Standalone-Guides in `docs/production/`:
+
+| Guide | Setup-Zeit | Was er macht |
+|-------|-----------|--------------|
+| [Error Tracking](docs/production/error-tracking.md) | 5 Min | Sentry-Integration für automatisches Fehler-Capturing |
+| [Security Headers](docs/production/security-headers.md) | 2 Min | XSS-, Clickjacking-, MIME-Sniffing-Schutz |
+| [Performance](docs/production/performance.md) | 10 Min | Lighthouse-Checks, Image-Optimierung, Caching |
+| [Database Optimization](docs/production/database-optimization.md) | 15 Min | Indexing, N+1-Vermeidung, Query-Optimierung |
+| [Rate Limiting](docs/production/rate-limiting.md) | 10 Min | Upstash Redis gegen API-Missbrauch |
 
 ---
 
 ## Scripts
 
 ```bash
-npm run dev          # Development server (localhost:3000)
-npm run build        # Production build
-npm run start        # Production server
+npm run dev          # Development-Server (localhost:3000)
+npm run build        # Production-Build
+npm run start        # Production-Server
 npm run lint         # ESLint
-npm test             # Vitest: integration tests for API routes
-npm run test:e2e     # Playwright: E2E tests for user flows
-npm run test:all     # Run both test suites
+npm test             # Vitest: Integration-Tests für API-Routes
+npm run test:e2e     # Playwright: E2E-Tests für User-Flows
+npm run test:all     # Beide Test-Suites ausführen
 ```
 
 ---
 
-## Author
+## Autor
 
-Created by **becoss** – AI Product Engineer & Content Creator.
+Erstellt von **becoss** – AI Product Engineer & Content Creator.
 
 - [Website](https://becoss.de)
 
 ---
 
-## License
+## Lizenz
 
-MIT License – feel free to use for your projects.
+MIT-Lizenz – frei für eigene Projekte verwendbar.
 
-© becoss GmbH. All rights reserved.
+© becoss GmbH. Alle Rechte vorbehalten.
