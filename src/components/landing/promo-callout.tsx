@@ -4,7 +4,11 @@ import { promo } from '@/content/landing'
 
 export function PromoCallout() {
   return (
-    <section id="aktion" className="bg-white">
+    <section
+      id="aktion"
+      aria-labelledby="aktion-heading"
+      className="bg-white"
+    >
       <div className="container mx-auto px-4 py-16 md:px-6 md:py-20">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-[hsl(353_100%_36%)] px-6 py-12 text-primary-foreground shadow-xl md:px-12 md:py-16">
           <div
@@ -23,7 +27,10 @@ export function PromoCallout() {
                 {promo.badge}
               </div>
 
-              <h2 className="mt-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+              <h2
+                id="aktion-heading"
+                className="mt-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
+              >
                 {promo.headline}
               </h2>
 
@@ -47,11 +54,11 @@ export function PromoCallout() {
                   asChild
                   size="lg"
                   variant="secondary"
-                  className="text-base font-semibold text-primary hover:bg-white"
+                  className="text-base font-semibold text-primary hover:bg-white focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
                   <a href="#anfrage">
                     {promo.ctaLabel}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                   </a>
                 </Button>
               </div>

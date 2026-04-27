@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="container relative mx-auto grid gap-12 px-4 py-16 md:grid-cols-2 md:items-center md:px-6 md:py-24 lg:py-28">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-            <Sun className="h-4 w-4" />
+            <Sun className="h-4 w-4" aria-hidden />
             {hero.eyebrow}
           </div>
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
@@ -31,7 +31,7 @@ export function HeroSection() {
             <Button asChild size="lg" className="text-base">
               <a href="#anfrage">
                 {hero.ctaPrimary}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">

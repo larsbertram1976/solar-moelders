@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
+import { SkipLink } from '@/components/layout/skip-link'
 import { PromoBar } from '@/components/landing/promo-bar'
 
 export const metadata: Metadata = {
@@ -32,9 +33,12 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="flex min-h-screen flex-col antialiased">
+        <SkipLink />
         <PromoBar />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="hauptinhalt" className="flex-1" tabIndex={-1}>
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

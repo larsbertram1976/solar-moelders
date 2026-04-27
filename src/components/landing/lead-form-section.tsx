@@ -8,15 +8,22 @@ import { supportContact } from '@/content/landing'
  */
 export function LeadFormSection() {
   return (
-    <section id="anfrage" className="bg-white">
+    <section
+      id="anfrage"
+      aria-labelledby="anfrage-heading"
+      className="bg-white"
+    >
       <div className="container mx-auto px-4 py-16 md:px-6 md:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-              <Sun className="h-4 w-4" />
+              <Sun className="h-4 w-4" aria-hidden />
               Kostenlose Beratung
             </div>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            <h2
+              id="anfrage-heading"
+              className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl"
+            >
               Bereit für eigenen Sonnenstrom?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -36,14 +43,16 @@ export function LeadFormSection() {
                   Solange kannst Du uns direkt anrufen unter{' '}
                   <a
                     href={`tel:${supportContact.phone.replace(/\s/g, '')}`}
-                    className="font-medium text-primary hover:underline"
+                    aria-label={`Mölders anrufen unter ${supportContact.phoneDisplay}`}
+                    className="rounded-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {supportContact.phoneDisplay}
                   </a>{' '}
                   oder schreiben an{' '}
                   <a
                     href={`mailto:${supportContact.email}`}
-                    className="font-medium text-primary hover:underline"
+                    aria-label={`E-Mail an Mölders an ${supportContact.email}`}
+                    className="rounded-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {supportContact.email}
                   </a>

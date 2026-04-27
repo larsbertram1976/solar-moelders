@@ -9,7 +9,7 @@ export function SiteHeader() {
         <Link
           href="/"
           aria-label="Mölders – zur Startseite"
-          className="flex items-center"
+          className="flex items-center rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         >
           <Image
             src="/Moelders-logo.png"

@@ -8,10 +8,17 @@ import { faqs } from '@/content/landing'
 
 export function FaqAccordion() {
   return (
-    <section id="faq" className="bg-secondary/40">
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="bg-secondary/40"
+    >
       <div className="container mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <h2
+            id="faq-heading"
+            className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
+          >
             Häufige Fragen
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
