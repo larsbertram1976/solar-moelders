@@ -1,21 +1,40 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
+import { SiteHeader } from '@/components/layout/site-header'
+import { SiteFooter } from '@/components/layout/site-footer'
 
 export const metadata: Metadata = {
-  title: "becoss Coding Framework",
-  description: "AI-powered development workflow for Claude Code",
-};
+  title: 'Balkonkraftwerk vom Mölders-Spezialisten | Solar für Dein Zuhause',
+  description:
+    'Bis 800 W eigener Sonnenstrom mit dem Balkonkraftwerk von Mölders. Persönliche Beratung, Lieferung und Montage in Norddeutschland. Jetzt kostenlos anfragen.',
+  metadataBase: new URL('https://solar.moelders.de'),
+  openGraph: {
+    title: 'Balkonkraftwerk vom Mölders-Spezialisten',
+    description:
+      'Bis 800 W eigener Sonnenstrom mit dem Balkonkraftwerk von Mölders. Persönliche Beratung in Norddeutschland.',
+    locale: 'de_DE',
+    type: 'website',
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#E2001A',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
+    <html lang="de">
+      <body className="flex min-h-screen flex-col antialiased">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
-  );
+  )
 }

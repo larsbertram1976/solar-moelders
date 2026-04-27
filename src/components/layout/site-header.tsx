@@ -1,0 +1,30 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+
+export function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <Link
+          href="/"
+          aria-label="Mölders – zur Startseite"
+          className="flex items-center"
+        >
+          <Image
+            src="/Moelders-logo.png"
+            alt="Mölders"
+            width={160}
+            height={40}
+            priority
+            className="h-9 w-auto md:h-10"
+          />
+        </Link>
+
+        <Button asChild size="sm" className="md:size-default">
+          <a href="#anfrage">Beratung anfragen</a>
+        </Button>
+      </div>
+    </header>
+  )
+}
