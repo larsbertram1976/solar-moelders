@@ -136,6 +136,49 @@ app/page.tsx (die Landingpage)
 - **Annahme:** Hero-Bild kann von Mölders bereitgestellt oder lizenzfrei (Unsplash/Pexels mit Balkonkraftwerk-Motiv) verwendet werden — Fallback: KI-generiertes Stockbild mit klar dokumentierter Quelle
 - **Risiko:** Mölders-Rot-Hex ist Schätzwert aus Webseiten-Analyse — vor Go-Live mit Brand-Manual abgleichen
 
+## SEO & GEO
+
+**Implementierte Maßnahmen:**
+
+### Site-Baseline
+- `metadataBase`: `https://solar.moelders.de` (im Layout via `brand.url` aus `src/content/landing.ts`)
+- Title-Template: `'%s | Mölders Solar'` mit Default-Title für die Startseite
+- Robots-Meta: `index, follow` + erweiterte Google-Bot-Direktiven (`max-image-preview: large`)
+- Open Graph: vollständig (`type: website`, `locale: de_DE`, `siteName`, `images` mit Solar-Bild)
+- Twitter Card: `summary_large_image`
+- Icons: Mölders-Logo als Favicon + Apple-Touch-Icon
+- Canonical: `/` auf Startseite
+- `src/app/sitemap.ts` listet `/`, `/impressum`, `/datenschutz`
+- `src/app/robots.ts` erlaubt alles außer `/api/`, verweist auf Sitemap
+- `src/app/manifest.ts` (PWA-Manifest, theme-color `#E2001A`)
+
+### GEO (LLM-Optimierung)
+- `public/llms.txt` mit Site-Zusammenfassung, Key Pages, Mölders-Profil, FAQ-Highlights
+- Alle Inhalte server-rendered (RSC) → für AI-Crawler im initialen HTML lesbar
+- Saubere `<h1>`/`<h2>`/`<h3>`-Hierarchie und semantische Landmarks (durch a11y-Pass)
+
+### Strukturierte Daten (JSON-LD)
+| Schema | Ort | Zweck |
+|--------|-----|-------|
+| `Organization` | Layout (site-wide) | Mölders Holding mit Adresse, ContactPoint, sameAs |
+| `WebSite` | Layout (site-wide) | Site-Identität, verknüpft mit Organization |
+| `Service` (+ `Offer`) | Page | Balkonkraftwerk-Beratung mit 25%-Aktion (validFrom/validThrough) |
+| `FAQPage` | FaqAccordion | 6 Fragen/Antworten zum Balkonkraftwerk |
+
+### Page-Metadata
+- Startseite: explizite `metadata.title.absolute`, `description` (mit 25%-Hinweis), `alternates.canonical: '/'`
+
+**Validierung (offen für Browser-Test):**
+- Lighthouse SEO-Score wurde nicht headless gemessen (kein lokales Chrome im Setup) — manuell vor Go-Live in DevTools prüfen, Ziel ≥ 95
+- JSON-LD im [Google Rich Results Test](https://search.google.com/test/rich-results) prüfen, sobald Preview-Deployment steht
+- `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/manifest.webmanifest` werden alle korrekt ausgeliefert (lokal verifiziert)
+
+**Offene Punkte:**
+- `metadataBase` zeigt auf `https://solar.moelders.de` — Domain bei Mölders bestätigen lassen
+- Statisches OG-Bild ist aktuell `Solar-Bild-Moelders.jpeg` (600×316) — für optimale Social-Previews ein 1200×630-Asset ergänzen (z.B. via `opengraph-image.tsx`)
+- `sameAs` enthält bisher nur die Mutter-Website — Social-Profile (LinkedIn, Facebook, Instagram) ergänzen, sobald URLs vorliegen
+- Hinweis: `llms.txt` ist ein 2024-Vorschlag und noch nicht von allen AI-Crawlern unterstützt (best-effort GEO-Signal)
+
 ## QA Test Results
 _To be added by /qa_
 

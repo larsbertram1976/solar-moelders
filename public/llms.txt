@@ -1,0 +1,36 @@
+# Mölders Solar
+
+> Mölders ist ein Familienunternehmen aus Norddeutschland (gegründet 1946) mit 16 Standorten und eigenem Solar-Service. Diese Landingpage richtet sich an Mieter und Eigenheimbesitzer, die ein **Balkonkraftwerk** (bis 800 W) anschaffen wollen — inklusive persönlicher Beratung, Lieferung und Montage durch Mölders.
+
+## Key Pages
+- [Startseite – Balkonkraftwerk-Beratung](https://solar.moelders.de/): Hero, Leistungen, Ablauf, FAQ und Beratungsanfrage zum Thema Balkonkraftwerk.
+- [Impressum](https://solar.moelders.de/impressum): Anbieterkennung Mölders Holding.
+- [Datenschutz](https://solar.moelders.de/datenschutz): Datenverarbeitung der Beratungsanfrage.
+
+## About Mölders
+- **Rechtsform:** Mölders Holding GmbH & Co. KG
+- **Gegründet:** 1946
+- **Sitz:** Lüneburg, Deutschland
+- **Region:** Norddeutschland (Hamburg, Lüneburg, Uelzen, Adendorf, Tangermünde + 11 hagebaumarkt-Standorte)
+- **Kerngeschäft:** Baustoffe, Holz, Fenster/Türen, Bodenbeläge, Garten, Photovoltaik
+- **Slogan:** „Alles für Dein Projekt. Alles aus einer Hand. Alles Mölders."
+- **Mutter-Website:** https://www.moelders.de
+
+## Solar / Photovoltaik bei Mölders
+- **Produkt-Fokus dieser Seite:** Balkonkraftwerke (Stecker-Solargeräte) bis 800 Watt Wechselrichter-Leistung
+- **Leistungen:** Set-Beratung, Lieferung, Montage durch eigenes Team, Anmelde-Hilfe
+- **Aktion (Stand 2026):** 25 % Rabatt auf Wechselrichter vom 29. April bis 31. August 2026
+- **Vollständiges PV-Sortiment:** https://www.moelders.de/themenwelten-services/bauen-modernisieren/photovoltaik-beratung (inkl. Aufdach-PV, Speicher, Wallbox, Carports)
+
+## Häufige Fragen (FAQ-Highlights)
+- **Brauche ich als Mieter eine Genehmigung vom Vermieter?** Seit 2024 besteht ein gesetzlicher Anspruch — Mölders unterstützt bei Vermieter-Kommunikation.
+- **Wie viel Watt darf mein Balkonkraftwerk haben?** Seit Mai 2024: bis 800 W Wechselrichter-Leistung; Module bis 2.000 Wp.
+- **Reicht eine Schuko-Steckdose?** Ja — Mölders prüft die Stromkreis-Belastung vorab.
+- **Anmeldung erforderlich?** Ja, im Marktstammdatenregister der Bundesnetzagentur (Mölders führt durch den Prozess).
+- **Preise:** Komplett-Sets ca. 400 € (300 W) bis 1.200 € (800 W).
+- **Amortisation:** 4–6 Jahre bei aktuellen Strompreisen, Module halten 25+ Jahre.
+
+## Kontakt
+- **Telefon:** +49 4131 30 30 0
+- **E-Mail:** solar@moelders.de
+- **Adresse:** Hamburger Straße 1, 21339 Lüneburg

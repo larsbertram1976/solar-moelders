@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { faqs } from '@/content/landing'
+import { FaqJsonLd } from '@/components/seo/faq-json-ld'
 
 export function FaqAccordion() {
   return (
@@ -13,6 +14,7 @@ export function FaqAccordion() {
       aria-labelledby="faq-heading"
       className="bg-secondary/40"
     >
+      <FaqJsonLd />
       <div className="container mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24">
         <div className="text-center">
           <h2

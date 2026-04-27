@@ -12,9 +12,16 @@ import {
 
 export const brand = {
   name: 'Mölders',
+  legalName: 'Mölders Holding GmbH & Co. KG',
   product: 'Solar fürs Zuhause',
   claim: 'Alles für Dein Projekt. Alles aus einer Hand. Alles Mölders.',
   region: 'Norddeutschland',
+  // Produktiv-Domain — wenn sich diese ändert, hier UND in metadataBase (layout.tsx) anpassen.
+  url: 'https://solar.moelders.de',
+  parentUrl: 'https://www.moelders.de',
+  logoUrl: 'https://solar.moelders.de/Moelders-logo.png',
+  founded: '1946',
+  sameAs: ['https://www.moelders.de'],
 }
 
 export const hero = {
