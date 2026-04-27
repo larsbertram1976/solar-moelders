@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { hero } from '@/content/landing'
 import { Sun, ArrowRight } from 'lucide-react'
@@ -40,25 +41,16 @@ export function HeroSection() {
         </div>
 
         <div className="relative">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/10 to-secondary shadow-2xl ring-1 ring-border">
-            {/* Visual placeholder mit Sonne + Balkon-Andeutung — kann später durch echtes Foto ersetzt werden */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="grid grid-cols-3 gap-2 p-8">
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="aspect-square rounded-md bg-gradient-to-br from-slate-700 to-slate-900 ring-1 ring-slate-600"
-                    aria-hidden
-                  />
-                ))}
-              </div>
-            </div>
-            <div className="absolute right-6 top-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-yellow-300 shadow-lg">
-                <Sun className="h-12 w-12 text-yellow-700" />
-              </div>
-            </div>
-            <span className="sr-only">{hero.imageAlt}</span>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-border">
+            <Image
+              src={hero.image}
+              alt={hero.imageAlt}
+              width={hero.imageWidth}
+              height={hero.imageHeight}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="h-auto w-full"
+            />
           </div>
           <div className="absolute -bottom-4 -left-4 rounded-xl bg-white p-4 shadow-xl ring-1 ring-border md:-bottom-6 md:-left-6">
             <div className="text-3xl font-bold text-primary">800 W</div>

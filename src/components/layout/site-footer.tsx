@@ -11,9 +11,9 @@ export function SiteFooter() {
           <Image
             src="/Moelders-logo.png"
             alt="Mölders"
-            width={160}
-            height={40}
-            className="h-9 w-auto"
+            width={240}
+            height={181}
+            className="h-12 w-auto md:h-14"
           />
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Dein Spezialist für Bauen und Wohnen im Norden.

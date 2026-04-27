@@ -24,7 +24,27 @@ export const hero = {
     'Bis zu 800 Watt eigener Sonnenstrom — ohne Bürokratie-Marathon. Wir beraten Dich persönlich, liefern direkt zu Dir und unterstützen bei der Montage.',
   ctaPrimary: 'Kostenlose Beratung anfragen',
   ctaSecondary: 'So funktioniert’s',
-  imageAlt: 'Balkon mit Solarmodul vor norddeutschem Stadthintergrund',
+  image: '/Solar-Bild-Moelders.jpeg',
+  imageAlt:
+    'Familie auf dem Dach vor Solaranlage — Mölders bringt Sonnenstrom nach Hause',
+  imageWidth: 600,
+  imageHeight: 316,
+}
+
+export const promo = {
+  badge: 'Aktion',
+  headline: '25 % Rabatt auf Wechselrichter',
+  subline:
+    'Spar bei Deinem Balkonkraftwerk doppelt: Wir geben Dir 25 % Rabatt auf den Wechselrichter — das Herzstück Deiner Anlage.',
+  // Heute = 2026-04-27 (Mo). Nächster Mittwoch = 2026-04-29. Aktion bis Ende August 2026.
+  startDate: '2026-04-29',
+  endDate: '2026-08-31',
+  startDisplay: '29. April',
+  endDisplay: '31. August',
+  rangeShort: '29.04.–31.08.',
+  ctaLabel: 'Jetzt Angebot sichern',
+  legal:
+    'Aktion gilt vom 29. April bis 31. August 2026, nur auf Wechselrichter, solange der Vorrat reicht. Nicht mit anderen Rabatten kombinierbar.',
 }
 
 export const usps: Array<{ icon: LucideIcon; title: string; text: string }> = [
